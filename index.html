@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Custom Google Form</title>
+</head>
+
+<body>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+<form id="google_form" action="" method="POST" target="no-target">
+  <input id="name" placeholder="name">
+  <input id="phone" placeholder="phone">
+  <input id="email" placeholder="email">
+  <input id="message" placeholder="message">
+  <button id="form-submit" type="submit">Submit</button>
+</form>
+
+<p id="input-feedback"></p>
+
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
+
+<script>
+    $('#google_form').one('submit',function(){
+        var data_name = encodeURIComponent($('#name').val());
+        var data_phone = encodeURIComponent($('#phone').val());
+        var data_email = encodeURIComponent($('#email').val());
+        var data_message = encodeURIComponent($('#message').val());
+        var form_id = "1FAIpQLSc_yVW3ig2o906gyBLFPgxRwt4EluUzWOfK8kG5F_qszeZIcA";
+        var entry_name = "entry.1913370055";
+        var entry_phone = "entry.1959338191";
+        var entry_email = "entry.1695427221";
+        var entry_message = "entry.619912011";
+        var submit_url = (
+            'https://docs.google.com/forms/d/e/'+
+            form_id +
+            '/formResponse?' + 
+            entry_name + "=" + data_name + 
+            "&" + 
+            entry_phone + "=" + data_phone + 
+            "&" + 
+            entry_email + "=" + data_email + 
+            "&" + 
+            entry_message + "=" + data_message + 
+            '&submit=Submit'
+        );
+        console.log(submit_url);
+        $(this)[0].action=submit_url;
+        $('#input-feedback').text('Thank You!');
+    });
+</script>
+
+</body>
+</html>
