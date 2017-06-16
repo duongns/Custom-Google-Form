@@ -26,23 +26,24 @@
         var data_phone = encodeURIComponent($('#phone').val());
         var data_email = encodeURIComponent($('#email').val());
         var data_message = encodeURIComponent($('#message').val());
-        var form_id = "1FAIpQLSc_yVW3ig2o906gyBLFPgxRwt4EluUzWOfK8kG5F_qszeZIcA";
-        var entry_name = "entry.1913370055";
-        var entry_phone = "entry.1959338191";
-        var entry_email = "entry.1695427221";
-        var entry_message = "entry.619912011";
+        var form_id = '1FAIpQLSc_yVW3ig2o906gyBLFPgxRwt4EluUzWOfK8kG5F_qszeZIcA';
+        var entry_name = 'entry.1913370055';
+        var entry_phone = 'entry.1959338191';
+        var entry_email = 'entry.1695427221';
+        var entry_message = 'entry.619912011';
         var submit_url = (
             'https://docs.google.com/forms/d/e/'+
             form_id +
             '/formResponse?' + 
             entry_name + "=" + data_name + 
-            "&" + 
+            '&' + 
             entry_phone + "=" + data_phone + 
-            "&" + 
+            '&' + 
             entry_email + "=" + data_email + 
-            "&" + 
+            '&' + 
             entry_message + "=" + data_message + 
-            '&submit=Submit'
+            '&' + 
+            'submit=Submit'
         );
         console.log(submit_url);
         $(this)[0].action=submit_url;
